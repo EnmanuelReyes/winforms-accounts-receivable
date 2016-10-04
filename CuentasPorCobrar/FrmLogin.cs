@@ -19,6 +19,8 @@ namespace CuentasPorCobrar
 
         private void CmbLogin_Click(object sender, EventArgs e)
         {
+            //TODO: validate login
+
             FrmMenu frmMenu = new FrmMenu();
             Hide();
 
