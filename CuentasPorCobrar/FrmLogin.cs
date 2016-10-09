@@ -5,13 +5,11 @@ namespace CuentasPorCobrar
 {
     public partial class FrmLogin : Form
     {
-        private string _client;
-        private string _idIdentification;
+        private UsuarioService _usuarioService;
         public FrmLogin()
         {
             InitializeComponent();
-            _client = "test";
-            _idIdentification = "1234";
+            _usuarioService = new UsuarioService();
         }
 
         private void CmbLogin_Click(object sender, EventArgs e)
@@ -23,26 +21,27 @@ namespace CuentasPorCobrar
 
             try
             {
-                if ((string.IsNullOrWhiteSpace(txtUser.Text) &&
-                    string.IsNullOrWhiteSpace(txtPass.Text)) ||
-                    _client != txtUser.Text && _idIdentification != txtPass.Text)
+                if ((string.IsNullOrWhiteSpace(txtUser.Text)))
                 {
-                    MessageBox.Show("Credenciales incorrectas", " Error",
+                    MessageBox.Show("Debe introducir un usuario", " Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     frmLogin.Show();
                 }
-                else
+                else 
                 {
-                    if (txtUser.Text != null && txtPass.Text != null)
+                    bool existe = _usuarioService.existeUsuario(txtUser.Text, txtPass.Text);
+                    if (existe)
                     {
-                        if (_client != null && _idIdentification != null)
-                        {
-                            if (_client == txtUser.Text && _idIdentification == txtPass.Text)
-                            {
-                                frmMenu.Show();
-                            }
-                        }
+                        frmMenu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontro un usuario con los datos suministrados", " Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        frmLogin.Show();
+
                     }
                 }
             }
