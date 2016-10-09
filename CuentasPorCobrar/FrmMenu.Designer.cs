@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantemientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDeDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,9 @@
             // mantemientosToolStripMenuItem
             // 
             this.mantemientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem});
+            this.clientesToolStripMenuItem,
+            this.tipoDeDocumentosToolStripMenuItem,
+            this.transaccionesToolStripMenuItem});
             this.mantemientosToolStripMenuItem.Name = "mantemientosToolStripMenuItem";
             this.mantemientosToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.mantemientosToolStripMenuItem.Text = "Mantemientos";
@@ -59,6 +63,20 @@
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
+            // tipoDeDocumentosToolStripMenuItem
+            // 
+            this.tipoDeDocumentosToolStripMenuItem.Name = "tipoDeDocumentosToolStripMenuItem";
+            this.tipoDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.tipoDeDocumentosToolStripMenuItem.Text = "Tipos de Documentos";
+            this.tipoDeDocumentosToolStripMenuItem.Click += new System.EventHandler(this.tipoDeDocumentosToolStripMenuItem_Click);
+            // 
+            // transaccionesToolStripMenuItem
+            // 
+            this.transaccionesToolStripMenuItem.Name = "transaccionesToolStripMenuItem";
+            this.transaccionesToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.transaccionesToolStripMenuItem.Text = "Transacciones";
+            this.transaccionesToolStripMenuItem.Click += new System.EventHandler(this.transaccionesToolStripMenuItem_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -68,6 +86,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMenu";
             this.Text = "FrmMenu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenu_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -80,5 +99,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mantemientosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDeDocumentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transaccionesToolStripMenuItem;
     }
 }

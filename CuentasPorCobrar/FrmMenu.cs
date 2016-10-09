@@ -19,8 +19,25 @@ namespace CuentasPorCobrar
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FrmCliente frmCliente = new FrmCliente();
-            //frmCliente.Show();
+            FrmCliente frmCliente = new FrmCliente();
+            frmCliente.Show();
+        }
+
+        private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tipoDeDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTipoDocumento frmTipoDocumento = new FrmTipoDocumento();
+            frmTipoDocumento.Show();
+        }
+
+        private void transaccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTransaccion frmTransaccion = new FrmTransaccion();
+            frmTransaccion.Show();
         }
     }
 }
