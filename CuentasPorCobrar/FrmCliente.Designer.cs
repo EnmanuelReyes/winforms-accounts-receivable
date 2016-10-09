@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label cedulaLabel;
             System.Windows.Forms.Label limiteDeCreditoLabel;
             System.Windows.Forms.Label idEstadoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
             this.cuentaPorCobtrarDBDataSet = new CuentasPorCobrar.CuentaPorCobtrarDBDataSet();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.ClienteTableAdapter();
             this.tableAdapterManager = new CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.TableAdapterManager();
+            this.estadoTableAdapter = new CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.EstadoTableAdapter();
             this.clienteBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.clienteBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.cedulaTextBox = new System.Windows.Forms.TextBox();
             this.limiteDeCreditoTextBox = new System.Windows.Forms.TextBox();
             this.idEstadoComboBox = new System.Windows.Forms.ComboBox();
             this.estadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.estadoTableAdapter = new CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.EstadoTableAdapter();
             nombreLabel = new System.Windows.Forms.Label();
             cedulaLabel = new System.Windows.Forms.Label();
             limiteDeCreditoLabel = new System.Windows.Forms.Label();
@@ -67,6 +67,42 @@
             this.clienteBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estadoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(21, 70);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.TabIndex = 1;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // cedulaLabel
+            // 
+            cedulaLabel.AutoSize = true;
+            cedulaLabel.Location = new System.Drawing.Point(21, 96);
+            cedulaLabel.Name = "cedulaLabel";
+            cedulaLabel.Size = new System.Drawing.Size(43, 13);
+            cedulaLabel.TabIndex = 3;
+            cedulaLabel.Text = "Cedula:";
+            // 
+            // limiteDeCreditoLabel
+            // 
+            limiteDeCreditoLabel.AutoSize = true;
+            limiteDeCreditoLabel.Location = new System.Drawing.Point(21, 122);
+            limiteDeCreditoLabel.Name = "limiteDeCreditoLabel";
+            limiteDeCreditoLabel.Size = new System.Drawing.Size(90, 13);
+            limiteDeCreditoLabel.TabIndex = 5;
+            limiteDeCreditoLabel.Text = "Limite De Credito:";
+            // 
+            // idEstadoLabel
+            // 
+            idEstadoLabel.AutoSize = true;
+            idEstadoLabel.Location = new System.Drawing.Point(21, 148);
+            idEstadoLabel.Name = "idEstadoLabel";
+            idEstadoLabel.Size = new System.Drawing.Size(43, 13);
+            idEstadoLabel.TabIndex = 7;
+            idEstadoLabel.Text = "Estado:";
             // 
             // cuentaPorCobtrarDBDataSet
             // 
@@ -87,7 +123,14 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ClienteTableAdapter = this.clienteTableAdapter;
             this.tableAdapterManager.EstadoTableAdapter = this.estadoTableAdapter;
+            this.tableAdapterManager.TipoDocumentoTableAdapter = null;
+            this.tableAdapterManager.TipoMovimientoTableAdapter = null;
+            this.tableAdapterManager.TransaccionTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // estadoTableAdapter
+            // 
+            this.estadoTableAdapter.ClearBeforeFill = true;
             // 
             // clienteBindingNavigator
             // 
@@ -118,6 +161,31 @@
             this.clienteBindingNavigator.Size = new System.Drawing.Size(305, 25);
             this.clienteBindingNavigator.TabIndex = 0;
             this.clienteBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -151,17 +219,10 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -169,7 +230,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -178,100 +239,46 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // clienteBindingNavigatorSaveItem
             // 
             this.clienteBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.clienteBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("clienteBindingNavigatorSaveItem.Image")));
             this.clienteBindingNavigatorSaveItem.Name = "clienteBindingNavigatorSaveItem";
-            this.clienteBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.clienteBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.clienteBindingNavigatorSaveItem.Text = "Save Data";
             this.clienteBindingNavigatorSaveItem.Click += new System.EventHandler(this.clienteBindingNavigatorSaveItem_Click);
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(68, 69);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
-            nombreLabel.TabIndex = 1;
-            nombreLabel.Text = "Nombre:";
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(164, 66);
+            this.nombreTextBox.Location = new System.Drawing.Point(117, 67);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(121, 20);
+            this.nombreTextBox.Size = new System.Drawing.Size(176, 20);
             this.nombreTextBox.TabIndex = 2;
-            // 
-            // cedulaLabel
-            // 
-            cedulaLabel.AutoSize = true;
-            cedulaLabel.Location = new System.Drawing.Point(68, 95);
-            cedulaLabel.Name = "cedulaLabel";
-            cedulaLabel.Size = new System.Drawing.Size(43, 13);
-            cedulaLabel.TabIndex = 3;
-            cedulaLabel.Text = "Cedula:";
             // 
             // cedulaTextBox
             // 
             this.cedulaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Cedula", true));
-            this.cedulaTextBox.Location = new System.Drawing.Point(164, 92);
+            this.cedulaTextBox.Location = new System.Drawing.Point(117, 93);
             this.cedulaTextBox.Name = "cedulaTextBox";
-            this.cedulaTextBox.Size = new System.Drawing.Size(121, 20);
+            this.cedulaTextBox.Size = new System.Drawing.Size(176, 20);
             this.cedulaTextBox.TabIndex = 4;
-            // 
-            // limiteDeCreditoLabel
-            // 
-            limiteDeCreditoLabel.AutoSize = true;
-            limiteDeCreditoLabel.Location = new System.Drawing.Point(68, 121);
-            limiteDeCreditoLabel.Name = "limiteDeCreditoLabel";
-            limiteDeCreditoLabel.Size = new System.Drawing.Size(90, 13);
-            limiteDeCreditoLabel.TabIndex = 5;
-            limiteDeCreditoLabel.Text = "Limite De Credito:";
             // 
             // limiteDeCreditoTextBox
             // 
             this.limiteDeCreditoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "LimiteDeCredito", true));
-            this.limiteDeCreditoTextBox.Location = new System.Drawing.Point(164, 118);
+            this.limiteDeCreditoTextBox.Location = new System.Drawing.Point(117, 119);
             this.limiteDeCreditoTextBox.Name = "limiteDeCreditoTextBox";
-            this.limiteDeCreditoTextBox.Size = new System.Drawing.Size(121, 20);
+            this.limiteDeCreditoTextBox.Size = new System.Drawing.Size(176, 20);
             this.limiteDeCreditoTextBox.TabIndex = 6;
-            // 
-            // idEstadoLabel
-            // 
-            idEstadoLabel.AutoSize = true;
-            idEstadoLabel.Location = new System.Drawing.Point(68, 147);
-            idEstadoLabel.Name = "idEstadoLabel";
-            idEstadoLabel.Size = new System.Drawing.Size(43, 13);
-            idEstadoLabel.TabIndex = 7;
-            idEstadoLabel.Text = "Estado:";
             // 
             // idEstadoComboBox
             // 
@@ -280,9 +287,9 @@
             this.idEstadoComboBox.DataSource = this.estadoBindingSource;
             this.idEstadoComboBox.DisplayMember = "Id";
             this.idEstadoComboBox.FormattingEnabled = true;
-            this.idEstadoComboBox.Location = new System.Drawing.Point(164, 144);
+            this.idEstadoComboBox.Location = new System.Drawing.Point(117, 145);
             this.idEstadoComboBox.Name = "idEstadoComboBox";
-            this.idEstadoComboBox.Size = new System.Drawing.Size(121, 21);
+            this.idEstadoComboBox.Size = new System.Drawing.Size(176, 21);
             this.idEstadoComboBox.TabIndex = 8;
             this.idEstadoComboBox.ValueMember = "Id";
             // 
@@ -290,10 +297,6 @@
             // 
             this.estadoBindingSource.DataMember = "Estado";
             this.estadoBindingSource.DataSource = this.cuentaPorCobtrarDBDataSet;
-            // 
-            // estadoTableAdapter
-            // 
-            this.estadoTableAdapter.ClearBeforeFill = true;
             // 
             // FrmCliente
             // 

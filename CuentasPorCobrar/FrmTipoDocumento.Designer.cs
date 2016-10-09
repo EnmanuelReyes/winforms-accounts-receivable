@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoDocumento));
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label cuentaContableLabel;
             System.Windows.Forms.Label idEstadoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTipoDocumento));
             this.cuentaPorCobtrarDBDataSet = new CuentasPorCobrar.CuentaPorCobtrarDBDataSet();
             this.tipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipoDocumentoTableAdapter = new CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.TipoDocumentoTableAdapter();
             this.tableAdapterManager = new CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.TableAdapterManager();
+            this.estadoTableAdapter = new CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.EstadoTableAdapter();
             this.tipoDocumentoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.tipoDocumentoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.cuentaContableTextBox = new System.Windows.Forms.TextBox();
             this.idEstadoComboBox = new System.Windows.Forms.ComboBox();
             this.estadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.estadoTableAdapter = new CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.EstadoTableAdapter();
             descripcionLabel = new System.Windows.Forms.Label();
             cuentaContableLabel = new System.Windows.Forms.Label();
             idEstadoLabel = new System.Windows.Forms.Label();
@@ -64,6 +64,33 @@
             this.tipoDocumentoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estadoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(49, 75);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.TabIndex = 1;
+            descripcionLabel.Text = "Descripcion:";
+            // 
+            // cuentaContableLabel
+            // 
+            cuentaContableLabel.AutoSize = true;
+            cuentaContableLabel.Location = new System.Drawing.Point(49, 101);
+            cuentaContableLabel.Name = "cuentaContableLabel";
+            cuentaContableLabel.Size = new System.Drawing.Size(89, 13);
+            cuentaContableLabel.TabIndex = 3;
+            cuentaContableLabel.Text = "Cuenta Contable:";
+            // 
+            // idEstadoLabel
+            // 
+            idEstadoLabel.AutoSize = true;
+            idEstadoLabel.Location = new System.Drawing.Point(49, 127);
+            idEstadoLabel.Name = "idEstadoLabel";
+            idEstadoLabel.Size = new System.Drawing.Size(43, 13);
+            idEstadoLabel.TabIndex = 5;
+            idEstadoLabel.Text = "Estado:";
             // 
             // cuentaPorCobtrarDBDataSet
             // 
@@ -85,7 +112,13 @@
             this.tableAdapterManager.ClienteTableAdapter = null;
             this.tableAdapterManager.EstadoTableAdapter = this.estadoTableAdapter;
             this.tableAdapterManager.TipoDocumentoTableAdapter = this.tipoDocumentoTableAdapter;
+            this.tableAdapterManager.TipoMovimientoTableAdapter = null;
+            this.tableAdapterManager.TransaccionTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // estadoTableAdapter
+            // 
+            this.estadoTableAdapter.ClearBeforeFill = true;
             // 
             // tipoDocumentoBindingNavigator
             // 
@@ -116,6 +149,31 @@
             this.tipoDocumentoBindingNavigator.Size = new System.Drawing.Size(322, 25);
             this.tipoDocumentoBindingNavigator.TabIndex = 0;
             this.tipoDocumentoBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -149,17 +207,10 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -167,7 +218,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -176,83 +227,38 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // tipoDocumentoBindingNavigatorSaveItem
             // 
             this.tipoDocumentoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tipoDocumentoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("tipoDocumentoBindingNavigatorSaveItem.Image")));
             this.tipoDocumentoBindingNavigatorSaveItem.Name = "tipoDocumentoBindingNavigatorSaveItem";
-            this.tipoDocumentoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.tipoDocumentoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.tipoDocumentoBindingNavigatorSaveItem.Text = "Save Data";
             this.tipoDocumentoBindingNavigatorSaveItem.Click += new System.EventHandler(this.tipoDocumentoBindingNavigatorSaveItem_Click);
-            // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(86, 75);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 1;
-            descripcionLabel.Text = "Descripcion:";
             // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoDocumentoBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(181, 72);
+            this.descripcionTextBox.Location = new System.Drawing.Point(144, 72);
             this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(121, 20);
+            this.descripcionTextBox.Size = new System.Drawing.Size(166, 20);
             this.descripcionTextBox.TabIndex = 2;
-            // 
-            // cuentaContableLabel
-            // 
-            cuentaContableLabel.AutoSize = true;
-            cuentaContableLabel.Location = new System.Drawing.Point(86, 101);
-            cuentaContableLabel.Name = "cuentaContableLabel";
-            cuentaContableLabel.Size = new System.Drawing.Size(89, 13);
-            cuentaContableLabel.TabIndex = 3;
-            cuentaContableLabel.Text = "Cuenta Contable:";
             // 
             // cuentaContableTextBox
             // 
             this.cuentaContableTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoDocumentoBindingSource, "CuentaContable", true));
-            this.cuentaContableTextBox.Location = new System.Drawing.Point(181, 98);
+            this.cuentaContableTextBox.Location = new System.Drawing.Point(144, 98);
             this.cuentaContableTextBox.Name = "cuentaContableTextBox";
-            this.cuentaContableTextBox.Size = new System.Drawing.Size(121, 20);
+            this.cuentaContableTextBox.Size = new System.Drawing.Size(166, 20);
             this.cuentaContableTextBox.TabIndex = 4;
-            // 
-            // idEstadoLabel
-            // 
-            idEstadoLabel.AutoSize = true;
-            idEstadoLabel.Location = new System.Drawing.Point(86, 127);
-            idEstadoLabel.Name = "idEstadoLabel";
-            idEstadoLabel.Size = new System.Drawing.Size(43, 13);
-            idEstadoLabel.TabIndex = 5;
-            idEstadoLabel.Text = "Estado:";
             // 
             // idEstadoComboBox
             // 
@@ -261,9 +267,9 @@
             this.idEstadoComboBox.DataSource = this.estadoBindingSource;
             this.idEstadoComboBox.DisplayMember = "Id";
             this.idEstadoComboBox.FormattingEnabled = true;
-            this.idEstadoComboBox.Location = new System.Drawing.Point(181, 124);
+            this.idEstadoComboBox.Location = new System.Drawing.Point(144, 124);
             this.idEstadoComboBox.Name = "idEstadoComboBox";
-            this.idEstadoComboBox.Size = new System.Drawing.Size(121, 21);
+            this.idEstadoComboBox.Size = new System.Drawing.Size(166, 21);
             this.idEstadoComboBox.TabIndex = 6;
             this.idEstadoComboBox.ValueMember = "Id";
             // 
@@ -271,10 +277,6 @@
             // 
             this.estadoBindingSource.DataMember = "Estado";
             this.estadoBindingSource.DataSource = this.cuentaPorCobtrarDBDataSet;
-            // 
-            // estadoTableAdapter
-            // 
-            this.estadoTableAdapter.ClearBeforeFill = true;
             // 
             // FrmTipoDocumento
             // 

@@ -87,7 +87,7 @@
             // idTipoDocumentoLabel
             // 
             idTipoDocumentoLabel.AutoSize = true;
-            idTipoDocumentoLabel.Location = new System.Drawing.Point(105, 92);
+            idTipoDocumentoLabel.Location = new System.Drawing.Point(39, 92);
             idTipoDocumentoLabel.Name = "idTipoDocumentoLabel";
             idTipoDocumentoLabel.Size = new System.Drawing.Size(101, 13);
             idTipoDocumentoLabel.TabIndex = 1;
@@ -96,7 +96,7 @@
             // numeroDocumentoLabel
             // 
             numeroDocumentoLabel.AutoSize = true;
-            numeroDocumentoLabel.Location = new System.Drawing.Point(105, 119);
+            numeroDocumentoLabel.Location = new System.Drawing.Point(39, 119);
             numeroDocumentoLabel.Name = "numeroDocumentoLabel";
             numeroDocumentoLabel.Size = new System.Drawing.Size(105, 13);
             numeroDocumentoLabel.TabIndex = 3;
@@ -105,7 +105,7 @@
             // fechaLabel
             // 
             fechaLabel.AutoSize = true;
-            fechaLabel.Location = new System.Drawing.Point(105, 146);
+            fechaLabel.Location = new System.Drawing.Point(39, 146);
             fechaLabel.Name = "fechaLabel";
             fechaLabel.Size = new System.Drawing.Size(40, 13);
             fechaLabel.TabIndex = 5;
@@ -114,7 +114,7 @@
             // idClienteLabel
             // 
             idClienteLabel.AutoSize = true;
-            idClienteLabel.Location = new System.Drawing.Point(105, 171);
+            idClienteLabel.Location = new System.Drawing.Point(39, 171);
             idClienteLabel.Name = "idClienteLabel";
             idClienteLabel.Size = new System.Drawing.Size(54, 13);
             idClienteLabel.TabIndex = 7;
@@ -123,7 +123,7 @@
             // montoLabel
             // 
             montoLabel.AutoSize = true;
-            montoLabel.Location = new System.Drawing.Point(105, 198);
+            montoLabel.Location = new System.Drawing.Point(39, 198);
             montoLabel.Name = "montoLabel";
             montoLabel.Size = new System.Drawing.Size(40, 13);
             montoLabel.TabIndex = 9;
@@ -132,7 +132,7 @@
             // idTipoMovimientoLabel
             // 
             idTipoMovimientoLabel.AutoSize = true;
-            idTipoMovimientoLabel.Location = new System.Drawing.Point(105, 224);
+            idTipoMovimientoLabel.Location = new System.Drawing.Point(39, 224);
             idTipoMovimientoLabel.Name = "idTipoMovimientoLabel";
             idTipoMovimientoLabel.Size = new System.Drawing.Size(100, 13);
             idTipoMovimientoLabel.TabIndex = 11;
@@ -197,7 +197,7 @@
             this.transaccionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.transaccionBindingNavigator.Name = "transaccionBindingNavigator";
             this.transaccionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.transaccionBindingNavigator.Size = new System.Drawing.Size(436, 25);
+            this.transaccionBindingNavigator.Size = new System.Drawing.Size(502, 25);
             this.transaccionBindingNavigator.TabIndex = 0;
             this.transaccionBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -302,9 +302,9 @@
             this.idTipoDocumentoComboBox.DataSource = this.tipoDocumentoBindingSource;
             this.idTipoDocumentoComboBox.DisplayMember = "IdTipoDocumento";
             this.idTipoDocumentoComboBox.FormattingEnabled = true;
-            this.idTipoDocumentoComboBox.Location = new System.Drawing.Point(216, 89);
+            this.idTipoDocumentoComboBox.Location = new System.Drawing.Point(150, 89);
             this.idTipoDocumentoComboBox.Name = "idTipoDocumentoComboBox";
-            this.idTipoDocumentoComboBox.Size = new System.Drawing.Size(200, 21);
+            this.idTipoDocumentoComboBox.Size = new System.Drawing.Size(267, 21);
             this.idTipoDocumentoComboBox.TabIndex = 2;
             this.idTipoDocumentoComboBox.ValueMember = "IdTipoDocumento";
             // 
@@ -316,17 +316,17 @@
             // numeroDocumentoTextBox
             // 
             this.numeroDocumentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transaccionBindingSource, "NumeroDocumento", true));
-            this.numeroDocumentoTextBox.Location = new System.Drawing.Point(216, 116);
+            this.numeroDocumentoTextBox.Location = new System.Drawing.Point(150, 116);
             this.numeroDocumentoTextBox.Name = "numeroDocumentoTextBox";
-            this.numeroDocumentoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.numeroDocumentoTextBox.Size = new System.Drawing.Size(267, 20);
             this.numeroDocumentoTextBox.TabIndex = 4;
             // 
             // fechaDateTimePicker
             // 
             this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.transaccionBindingSource, "Fecha", true));
-            this.fechaDateTimePicker.Location = new System.Drawing.Point(216, 142);
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(150, 142);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
-            this.fechaDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(267, 20);
             this.fechaDateTimePicker.TabIndex = 6;
             // 
             // idClienteComboBox
@@ -336,9 +336,9 @@
             this.idClienteComboBox.DataSource = this.clienteBindingSource;
             this.idClienteComboBox.DisplayMember = "IdCliente";
             this.idClienteComboBox.FormattingEnabled = true;
-            this.idClienteComboBox.Location = new System.Drawing.Point(216, 168);
+            this.idClienteComboBox.Location = new System.Drawing.Point(150, 168);
             this.idClienteComboBox.Name = "idClienteComboBox";
-            this.idClienteComboBox.Size = new System.Drawing.Size(200, 21);
+            this.idClienteComboBox.Size = new System.Drawing.Size(267, 21);
             this.idClienteComboBox.TabIndex = 8;
             this.idClienteComboBox.ValueMember = "IdCliente";
             // 
@@ -350,9 +350,9 @@
             // montoTextBox
             // 
             this.montoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transaccionBindingSource, "Monto", true));
-            this.montoTextBox.Location = new System.Drawing.Point(216, 195);
+            this.montoTextBox.Location = new System.Drawing.Point(150, 195);
             this.montoTextBox.Name = "montoTextBox";
-            this.montoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.montoTextBox.Size = new System.Drawing.Size(267, 20);
             this.montoTextBox.TabIndex = 10;
             // 
             // idTipoMovimientoComboBox
@@ -362,9 +362,9 @@
             this.idTipoMovimientoComboBox.DataSource = this.tipoMovimientoBindingSource;
             this.idTipoMovimientoComboBox.DisplayMember = "IdTipoMovimiento";
             this.idTipoMovimientoComboBox.FormattingEnabled = true;
-            this.idTipoMovimientoComboBox.Location = new System.Drawing.Point(216, 221);
+            this.idTipoMovimientoComboBox.Location = new System.Drawing.Point(150, 221);
             this.idTipoMovimientoComboBox.Name = "idTipoMovimientoComboBox";
-            this.idTipoMovimientoComboBox.Size = new System.Drawing.Size(200, 21);
+            this.idTipoMovimientoComboBox.Size = new System.Drawing.Size(267, 21);
             this.idTipoMovimientoComboBox.TabIndex = 12;
             this.idTipoMovimientoComboBox.ValueMember = "IdTipoMovimiento";
             // 
@@ -391,7 +391,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 262);
+            this.ClientSize = new System.Drawing.Size(502, 262);
             this.Controls.Add(idTipoDocumentoLabel);
             this.Controls.Add(this.idTipoDocumentoComboBox);
             this.Controls.Add(numeroDocumentoLabel);

@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteService.cs" />
     <Compile Include="CuentaPorCobtrarDBDataSet.cs">
       <DependentUpon>CuentaPorCobtrarDBDataSet.xsd</DependentUpon>
     </Compile>

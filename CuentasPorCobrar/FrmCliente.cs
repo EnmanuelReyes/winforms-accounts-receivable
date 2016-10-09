@@ -12,16 +12,39 @@ namespace CuentasPorCobrar
 {
     public partial class FrmCliente : Form
     {
+
         public FrmCliente()
         {
             InitializeComponent();
         }
 
+        public new bool Validate()
+        {
+            base.Validate();
+
+            if(ClienteService.ValidaCedula(cedulaTextBox.Text))
+            {
+                return true;
+            } else
+            {
+
+                MessageBox.Show("Cedula incorrecta", " Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+
+        }
+
         private void clienteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.clienteBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.cuentaPorCobtrarDBDataSet);
+            if (this.Validate())
+            {
+                this.clienteBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.cuentaPorCobtrarDBDataSet);
+            }
+            
+           
 
         }
 
