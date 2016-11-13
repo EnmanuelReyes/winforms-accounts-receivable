@@ -21,17 +21,33 @@ namespace CuentasPorCobrar
         public new bool Validate()
         {
             base.Validate();
-
+            bool valid = false;
             if(ClienteService.ValidaCedula(cedulaTextBox.Text))
             {
-                return true;
+                valid = true;
             } else
             {
 
                 MessageBox.Show("Cedula incorrecta", " Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                valid = false;
             }
+
+            if (!valid) return valid;
+
+            if (Double.Parse(limiteDeCreditoTextBox.Text)>=0)
+            {
+                valid = true;
+            }
+            else
+            {
+
+                MessageBox.Show("Limite de credito debe ser mayor o igual que 0", " Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valid = false;
+            }
+
+            return valid;
 
 
         }

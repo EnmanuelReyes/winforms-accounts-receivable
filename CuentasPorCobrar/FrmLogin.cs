@@ -62,5 +62,14 @@ namespace CuentasPorCobrar
         {
 
         }
+
+        private void TextBoxKeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CmbLogin_Click(null, null);
+                e.Handled = true;
+            }
+        }
     }
 }

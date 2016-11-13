@@ -17,11 +17,32 @@ namespace CuentasPorCobrar
             InitializeComponent();
         }
 
+        public new bool Validate()
+        {
+            base.Validate();
+            if (Double.Parse(montoTextBox.Text) > 0)
+            {
+                return true;
+            }
+            else
+            {
+
+                MessageBox.Show("Monto debe ser mayor que 0", " Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+
+        }
+
         private void transaccionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.transaccionBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.cuentaPorCobtrarDBDataSet);
+            if (this.Validate())
+            {
+                this.transaccionBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.cuentaPorCobtrarDBDataSet);
+            }
+          
 
         }
 
