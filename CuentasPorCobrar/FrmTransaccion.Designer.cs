@@ -67,6 +67,7 @@
             this.tipoDocumentoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.transaccionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tipoMovimientoTableAdapter = new CuentasPorCobrar.CuentaPorCobtrarDBDataSetTableAdapters.TipoMovimientoTableAdapter();
+            this.fKTransaccionTipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             idTipoDocumentoLabel = new System.Windows.Forms.Label();
             numeroDocumentoLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
@@ -82,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tipoMovimientoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaccionBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKTransaccionTipoDocumentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idTipoDocumentoLabel
@@ -297,6 +299,7 @@
             // 
             // idTipoDocumentoComboBox
             // 
+            this.idTipoDocumentoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.idTipoDocumentoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transaccionBindingSource, "IdTipoDocumento", true));
             this.idTipoDocumentoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cuentaPorCobtrarDBDataSet, "Transaccion.IdTipoDocumento", true));
             this.idTipoDocumentoComboBox.DataSource = this.tipoDocumentoBindingSource;
@@ -387,6 +390,11 @@
             // 
             this.tipoMovimientoTableAdapter.ClearBeforeFill = true;
             // 
+            // fKTransaccionTipoDocumentoBindingSource
+            // 
+            this.fKTransaccionTipoDocumentoBindingSource.DataMember = "FK_Transaccion_TipoDocumento";
+            this.fKTransaccionTipoDocumentoBindingSource.DataSource = this.tipoDocumentoBindingSource;
+            // 
             // FrmTransaccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tipoMovimientoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transaccionBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKTransaccionTipoDocumentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,5 +465,6 @@
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.BindingSource tipoMovimientoBindingSource;
         private CuentaPorCobtrarDBDataSetTableAdapters.TipoMovimientoTableAdapter tipoMovimientoTableAdapter;
+        private System.Windows.Forms.BindingSource fKTransaccionTipoDocumentoBindingSource;
     }
 }

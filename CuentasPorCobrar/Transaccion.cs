@@ -15,12 +15,12 @@ namespace CuentasPorCobrar
     public partial class Transaccion
     {
         public int IdTransaccion { get; set; }
-        public int IdTipoDocumento { get; set; }
+        public int IdTipoDocumento { private get; set; }
         public string NumeroDocumento { get; set; }
         public System.DateTime Fecha { get; set; }
-        public int IdCliente { get; set; }
+        public int IdCliente { private get; set; }
         public decimal Monto { get; set; }
-        public int IdTipoMovimiento { get; set; }
+        public int IdTipoMovimiento { private get; set; }
     
         public virtual Cliente Cliente { get; set; }
         public virtual TipoDocumento TipoDocumento { get; set; }

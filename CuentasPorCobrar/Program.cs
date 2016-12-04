@@ -16,6 +16,7 @@ namespace CuentasPorCobrar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            MapperConfiguration.Initialize();
             Application.Run(new FrmLogin());
         }
     }

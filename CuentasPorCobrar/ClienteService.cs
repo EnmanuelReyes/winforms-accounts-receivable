@@ -8,6 +8,8 @@ namespace CuentasPorCobrar
 {
     class ClienteService
     {
+        private CXCEntities entities = new CXCEntities();
+
         public static bool ValidaCedula(string pCedula)
 
         {
@@ -28,10 +30,52 @@ namespace CuentasPorCobrar
                     vnTotal += Int32.Parse(vCalculo.ToString().Substring(0, 1)) + Int32.Parse(vCalculo.ToString().Substring(1, 1));
             }
 
-            if (vnTotal % 10 == 0)
+            if (vnTotal % 10 == 0 && !pCedula.Equals("00000000000"))
                 return true;
             else
                 return false;
+        }
+
+        public bool PermiteTransaccion(decimal montoTransaccion, int tipoMovimiento, int clienteId)
+        {
+            try
+            {
+                var cliente = from em in entities.Cliente where (em.IdCliente.Equals(clienteId)) select em;
+                Cliente clienteFromDb = cliente.First();
+                if(tipoMovimiento == 1)
+                {
+                    return clienteFromDb.LimiteDeCredito - montoTransaccion < 0;
+                }
+                return true;
+            }
+            catch (Exception ignored)
+            {
+                return true;
+            } 
+        }
+
+        public void ActualizaBalance(decimal montoTransaccion, int tipoMovimiento, int clienteId)
+        {
+            try
+            {
+                var cliente = from em in entities.Cliente where (em.IdCliente.Equals(clienteId)) select em;
+                Cliente clienteFromDb = cliente.First();
+                switch (tipoMovimiento)
+                {
+                    case 1:
+                        clienteFromDb.LimiteDeCredito -= montoTransaccion;
+                        break;
+                    case 2:
+                        clienteFromDb.LimiteDeCredito += montoTransaccion;
+                        break;  
+
+                }
+                int num = entities.SaveChanges();
+
+            }
+            catch (Exception e)
+            {
+            }
         }
     }
 }

@@ -19,6 +19,8 @@
         <AssociationConnector Association="CXCModel.FK_TipoDocumento_Estado" ManuallyRouted="false" />
         <AssociationConnector Association="CXCModel.FK_Transaccion_TipoDocumento" ManuallyRouted="false" />
         <AssociationConnector Association="CXCModel.FK_Transaccion_TipoMovimiento" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CXCModel.Rol" Width="1.5" PointX="3.5" PointY="0.75" />
+        <AssociationConnector Association="CXCModel.FK__Usuario__IdRol__5165187F" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

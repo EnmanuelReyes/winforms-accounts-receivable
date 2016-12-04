@@ -18,6 +18,8 @@ namespace CuentasPorCobrar
         public CXCEntities()
             : base("name=CXCEntities")
         {
+
+
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -33,5 +35,7 @@ namespace CuentasPorCobrar
         public virtual DbSet<Transaccion> Transaccion { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<AsientoContable> AsientoContable { get; set; }
+        public virtual DbSet<Rol> Rol { get; set; }
+
     }
 }

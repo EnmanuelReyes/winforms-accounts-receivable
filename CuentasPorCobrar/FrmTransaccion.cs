@@ -12,6 +12,7 @@ namespace CuentasPorCobrar
 {
     public partial class FrmTransaccion : Form
     {
+        ClienteService _clienteService = new ClienteService();
         public FrmTransaccion()
         {
             InitializeComponent();
@@ -20,19 +21,32 @@ namespace CuentasPorCobrar
         public new bool Validate()
         {
             base.Validate();
+            bool valid = false;
+
             if (Double.Parse(montoTextBox.Text) > 0)
             {
-                return true;
+                valid = true;
             }
             else
             {
 
                 MessageBox.Show("Monto debe ser mayor que 0", " Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                valid = false;
             }
 
+            if (!valid) return valid;
 
+            if (_clienteService.PermiteTransaccion(Decimal.Parse(montoTextBox.Text), Int32.Parse(idTipoMovimientoComboBox.Text),
+               Int32.Parse(idClienteComboBox.Text)))
+            {
+                MessageBox.Show("Esta transacción supera el limite de credito disponible del cliente", " Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                valid = false;
+
+            }
+
+            return valid;
         }
 
         private void transaccionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -41,6 +55,8 @@ namespace CuentasPorCobrar
             {
                 this.transaccionBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.cuentaPorCobtrarDBDataSet);
+                _clienteService.ActualizaBalance(Decimal.Parse(montoTextBox.Text), Int32.Parse(idTipoMovimientoComboBox.Text),
+               Int32.Parse(idClienteComboBox.Text));
             }
           
 

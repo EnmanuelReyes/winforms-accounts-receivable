@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CXCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CXCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="AsientoContable">
@@ -54,6 +54,13 @@ warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not h
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="nchar" MaxLength="25" Nullable="false" />
         </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="IdRol" />
+          </Key>
+          <Property Name="IdRol" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TipoDocumento">
           <Key>
             <PropertyRef Name="IdTipoDocumento" />
@@ -89,7 +96,20 @@ warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not h
           <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Contrasena" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="IdRol" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK__Usuario__IdRol__5165187F">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Balance_Cliente">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Balance" Type="Self.Balance" Multiplicity="*" />
@@ -166,6 +186,7 @@ warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not h
           <EntitySet Name="Balance" EntityType="Self.Balance" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoDocumento" EntityType="Self.TipoDocumento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoMovimiento" EntityType="Self.TipoMovimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transaccion" EntityType="Self.Transaccion" Schema="dbo" store:Type="Tables" />
@@ -182,6 +203,10 @@ warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not h
     [AsientoContable].[IdEstado] AS [IdEstado]
     FROM [dbo].[AsientoContable] AS [AsientoContable]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK__Usuario__IdRol__5165187F" Association="Self.FK__Usuario__IdRol__5165187F">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
           <AssociationSet Name="FK_Balance_Cliente" Association="Self.FK_Balance_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Balance" EntitySet="Balance" />
@@ -207,8 +232,7 @@ warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not h
             <End Role="Transaccion" EntitySet="Transaccion" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CXCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -269,12 +293,12 @@ warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not h
             <PropertyRef Name="IdTransaccion" />
           </Key>
           <Property Name="IdTransaccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdTipoDocumento" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoDocumento" Type="Int32" Nullable="false" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Name="NumeroDocumento" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Name="Monto" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="IdTipoMovimiento" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoMovimiento" Type="Int32" Nullable="false" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Transaccion_Cliente" FromRole="Transaccion" ToRole="Cliente" />
           <NavigationProperty Name="TipoDocumento" Relationship="Self.FK_Transaccion_TipoDocumento" FromRole="Transaccion" ToRole="TipoDocumento" />
           <NavigationProperty Name="TipoMovimiento" Relationship="Self.FK_Transaccion_TipoMovimiento" FromRole="Transaccion" ToRole="TipoMovimiento" />
@@ -286,6 +310,8 @@ warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not h
           <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Contrasena" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IdRol" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rol" Relationship="CXCModel.FK__Usuario__IdRol__5165187F" FromRole="Usuario" ToRole="Rol" />
         </EntityType>
         <EntityType Name="AsientoContable">
           <Key>
@@ -412,7 +438,32 @@ warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not h
             <End Role="TipoMovimiento" EntitySet="TipoMovimiento" />
             <End Role="Transaccion" EntitySet="Transaccion" />
           </AssociationSet>
+          <EntitySet Name="Rol" EntityType="CXCModel.Rol" />
+          <AssociationSet Name="FK__Usuario__IdRol__5165187F" Association="CXCModel.FK__Usuario__IdRol__5165187F">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="IdRol" />
+          </Key>
+          <Property Name="IdRol" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Usuario" Relationship="CXCModel.FK__Usuario__IdRol__5165187F" FromRole="Rol" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="FK__Usuario__IdRol__5165187F">
+          <End Type="CXCModel.Rol" Role="Rol" Multiplicity="1" />
+          <End Type="CXCModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="IdRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IdRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -482,6 +533,7 @@ warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not h
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="CXCModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
@@ -499,6 +551,14 @@ warning 6002: The table/view 'CuentaPorCobtrarDB.dbo.AsientoContable' does not h
                 <ScalarProperty Name="FechaAsiento" ColumnName="FechaAsiento" />
                 <ScalarProperty Name="MontoAsiento" ColumnName="MontoAsiento" />
                 <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="CXCModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdRol" ColumnName="IdRol" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

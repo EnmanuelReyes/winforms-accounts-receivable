@@ -47,6 +47,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -55,6 +59,8 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -107,6 +113,12 @@
     <Compile Include="Estado.cs">
       <DependentUpon>EDMCXC.tt</DependentUpon>
     </Compile>
+    <Compile Include="FrmBusquedaTransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBusquedaTransaccion.Designer.cs">
+      <DependentUpon>FrmBusquedaTransaccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,21 +149,37 @@
     <Compile Include="FrmTransaccion.Designer.cs">
       <DependentUpon>FrmTransaccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVisorReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisorReporte.Designer.cs">
+      <DependentUpon>FrmVisorReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapperConfiguration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rol.cs">
+      <DependentUpon>EDMCXC.tt</DependentUpon>
+    </Compile>
     <Compile Include="TipoDocumento.cs">
       <DependentUpon>EDMCXC.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoMovimiento.cs">
       <DependentUpon>EDMCXC.tt</DependentUpon>
     </Compile>
+    <Compile Include="TransacccionDTO.cs" />
     <Compile Include="Transaccion.cs">
       <DependentUpon>EDMCXC.tt</DependentUpon>
     </Compile>
+    <Compile Include="TransaccionService.cs" />
     <Compile Include="Usuario.cs">
       <DependentUpon>EDMCXC.tt</DependentUpon>
     </Compile>
     <Compile Include="UsuarioService.cs" />
+    <Compile Include="Util.cs" />
+    <EmbeddedResource Include="FrmBusquedaTransaccion.resx">
+      <DependentUpon>FrmBusquedaTransaccion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +195,9 @@
     <EmbeddedResource Include="FrmTransaccion.resx">
       <DependentUpon>FrmTransaccion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisorReporte.resx">
+      <DependentUpon>FrmVisorReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -176,6 +207,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="CuentaPorCobtrarDBDataSet.xsc">
       <DependentUpon>CuentaPorCobtrarDBDataSet.xsd</DependentUpon>
     </None>
@@ -193,8 +225,10 @@
     </EntityDeploy>
     <None Include="EDMCXC.edmx.diagram">
       <DependentUpon>EDMCXC.edmx</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\TransacccionDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

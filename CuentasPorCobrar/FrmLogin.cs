@@ -30,9 +30,11 @@ namespace CuentasPorCobrar
                 }
                 else 
                 {
-                    bool existe = _usuarioService.existeUsuario(txtUser.Text, txtPass.Text);
+                    var user = _usuarioService.getUsuario(txtUser.Text, txtPass.Text);
+                    bool existe = user != null;
                     if (existe)
                     {
+                        frmMenu.setUsuario(user);
                         frmMenu.Show();
                     }
                     else

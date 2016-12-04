@@ -28,5 +28,9 @@ namespace CuentasPorCobrar
         public virtual Estado Estado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transaccion> Transaccion { get; set; }
+        public new string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

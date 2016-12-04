@@ -12,24 +12,18 @@ namespace CuentasPorCobrar
     using System;
     using System.Collections.Generic;
     
-    public partial class TipoMovimiento
+    public partial class Rol
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TipoMovimiento()
+        public Rol()
         {
-            this.Transaccion = new HashSet<Transaccion>();
+            this.Usuario = new HashSet<Usuario>();
         }
     
-        public int IdTipoMovimiento { get; set; }
-        public string Descripcion { get; set; }
+        public int IdRol { get; set; }
+        public string Nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Transaccion> Transaccion { get; set; }
-
-        public new string ToString()
-        {
-            return Descripcion;
-        }
+        public virtual ICollection<Usuario> Usuario { get; set; }
     }
-
 }
