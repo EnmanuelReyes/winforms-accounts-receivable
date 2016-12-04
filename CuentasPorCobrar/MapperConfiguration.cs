@@ -16,6 +16,8 @@ namespace CuentasPorCobrar
                 .ForMember(dest => dest.Cliente, opt => opt.MapFrom(src => src.Cliente.Nombre))
                 .ForMember(dest => dest.TipoDocumento, opt => opt.MapFrom(src => src.TipoDocumento.Descripcion))
                 .ForMember(dest => dest.TipoMovimiento, opt => opt.MapFrom(src => src.TipoMovimiento.Descripcion));
+                cfg.CreateMap<Cliente, ClienteDTO>()
+                .ForMember(dest => dest.Estado, opt => opt.MapFrom(src => src.Estado.Descripcion));
             });
 
         }

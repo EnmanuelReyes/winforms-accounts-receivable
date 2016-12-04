@@ -89,5 +89,18 @@ namespace CuentasPorCobrar
         {
 
         }
+
+        private void cientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (usuario.Rol.Nombre.Contains("Administrador") || usuario.Rol.Nombre.Contains("Visualizador"))
+            {
+                FrmBusquedaCliente frmBusquedaCliente = new FrmBusquedaCliente();
+                frmBusquedaCliente.Show();
+            }
+            else
+            {
+                unforbidden();
+            }
+        }
     }
 }

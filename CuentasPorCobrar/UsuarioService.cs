@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,12 +17,15 @@ namespace CuentasPorCobrar
             {
                 var usuario = from em in entities.Usuario where (em.Nombre.Equals(nombre) && em.Contrasena.Equals(contrasena)) select em;
                 return usuario.First();
-            } catch(Exception e)
+            }
+            catch (Exception e)
             {
                 return null;
             }
-            
+
         }
+
+        
 
         public bool tieneRol(Usuario user, string rol)
         {

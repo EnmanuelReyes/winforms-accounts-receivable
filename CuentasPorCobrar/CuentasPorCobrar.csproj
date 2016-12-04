@@ -86,6 +86,7 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>EDMCXC.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClienteDTO.cs" />
     <Compile Include="ClienteService.cs" />
     <Compile Include="CuentaPorCobtrarDBDataSet.cs">
       <DependentUpon>CuentaPorCobtrarDBDataSet.xsd</DependentUpon>
@@ -112,6 +113,12 @@
     </Compile>
     <Compile Include="Estado.cs">
       <DependentUpon>EDMCXC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBusquedaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBusquedaCliente.Designer.cs">
+      <DependentUpon>FrmBusquedaCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBusquedaTransaccion.cs">
       <SubType>Form</SubType>
@@ -177,6 +184,9 @@
     </Compile>
     <Compile Include="UsuarioService.cs" />
     <Compile Include="Util.cs" />
+    <EmbeddedResource Include="FrmBusquedaCliente.resx">
+      <DependentUpon>FrmBusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBusquedaTransaccion.resx">
       <DependentUpon>FrmBusquedaTransaccion.cs</DependentUpon>
     </EmbeddedResource>

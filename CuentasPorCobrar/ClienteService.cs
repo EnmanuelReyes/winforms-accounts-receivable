@@ -77,5 +77,29 @@ namespace CuentasPorCobrar
             {
             }
         }
+
+        public IEnumerable<Cliente> searchByCriteria(string criteria)
+        {
+            try
+            {
+                var clients = from em in entities.Cliente
+                              where (em.Nombre.Contains(criteria) ||
+                               em.Cedula.ToString().Contains(criteria) ||
+                               em.LimiteDeCredito.ToString().Contains(criteria) ||
+                               em.IdCliente.ToString().Contains(criteria))
+                              select em;
+                return clients.ToList();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+        }
+        public List<Cliente> getClientes()
+        {
+            return (List<Cliente>)from em in entities.Cliente.ToList() select em;
+
+        }
     }
 }

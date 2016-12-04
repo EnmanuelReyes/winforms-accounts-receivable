@@ -38,7 +38,7 @@ namespace CuentasPorCobrar
             if (!valid) return valid;
 
             if (_clienteService.PermiteTransaccion(Decimal.Parse(montoTextBox.Text), Int32.Parse(idTipoMovimientoComboBox.Text),
-               Int32.Parse(idClienteComboBox.Text)))
+               Int32.Parse(idClienteComboBox.Text.ToString())))
             {
                 MessageBox.Show("Esta transacción supera el limite de credito disponible del cliente", " Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -35,6 +35,7 @@
             this.transaccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaccionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +84,8 @@
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.transaccionesToolStripMenuItem1});
+            this.transaccionesToolStripMenuItem1,
+            this.cientesToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -94,6 +96,13 @@
             this.transaccionesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.transaccionesToolStripMenuItem1.Text = "Transacciones";
             this.transaccionesToolStripMenuItem1.Click += new System.EventHandler(this.transaccionesToolStripMenuItem1_Click);
+            // 
+            // cientesToolStripMenuItem
+            // 
+            this.cientesToolStripMenuItem.Name = "cientesToolStripMenuItem";
+            this.cientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cientesToolStripMenuItem.Text = "Cientes";
+            this.cientesToolStripMenuItem.Click += new System.EventHandler(this.cientesToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 
@@ -122,5 +131,6 @@
         private System.Windows.Forms.ToolStripMenuItem transaccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transaccionesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cientesToolStripMenuItem;
     }
 }

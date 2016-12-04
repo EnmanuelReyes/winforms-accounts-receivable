@@ -335,9 +335,8 @@
             // idClienteComboBox
             // 
             this.idClienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.transaccionBindingSource, "IdCliente", true));
-            this.idClienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cuentaPorCobtrarDBDataSet, "Transaccion.IdCliente", true));
             this.idClienteComboBox.DataSource = this.clienteBindingSource;
-            this.idClienteComboBox.DisplayMember = "IdCliente";
+            this.idClienteComboBox.DisplayMember = "Nombre";
             this.idClienteComboBox.FormattingEnabled = true;
             this.idClienteComboBox.Location = new System.Drawing.Point(150, 168);
             this.idClienteComboBox.Name = "idClienteComboBox";
