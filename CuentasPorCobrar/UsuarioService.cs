@@ -13,33 +13,18 @@ namespace CuentasPorCobrar
 
         public Usuario getUsuario(string nombre, string contrasena)
         {
-            try
-            {
-                var usuario = from em in entities.Usuario where (em.Nombre.Equals(nombre) && em.Contrasena.Equals(contrasena)) select em;
-                return usuario.First();
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
-
-        }
-
-        
+            return entities.Usuario.Where(x => x.Nombre == nombre && x.Contrasena == contrasena).FirstOrDefault() ?? null;
+        }        
 
         public bool tieneRol(Usuario user, string rol)
         {
-            try
+            var usuario = getUsuario(user.Nombre, user.Contrasena);
+            if (user != null)
             {
-                //var usuario = from em in entities.Usuario where (em.Rol.Nombre)
-                //var usuario = from em in entities.Usuario where (em..Equals(nombre) && em.Contrasena.Equals(contrasena)) select em;
-                return null != null;
+                var rl = entities.Rol.Where(x => x.Nombre == rol).FirstOrDefault();
+                return rl != null ? true : false;
             }
-            catch (Exception e)
-            {
-                return false;
-            }
-
+            return false;
         }
     }
 }
